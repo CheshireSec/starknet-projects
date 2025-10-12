@@ -2,5 +2,14 @@
 version = 1
 
 [[package]]
+name = "alexandria_math"
+version = "0.6.1"
+source = "registry+https://scarbs.xyz/"
+checksum = "sha256:19160f0993a6643e8e71a3bce03e54a37f26b8cad94f21668d7cc9afd08d2047"
+
+[[package]]
 name = "basecamp"
 version = "0.0.1"
+dependencies = [
+ "alexandria_math",
+]
