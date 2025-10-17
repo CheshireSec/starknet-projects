@@ -1,11 +1,25 @@
 use exercism::acronym;
 
 #[test]
-fn test_simple_acronym() {
-    // Depending on your std version, both of these might work:
-    let phrase: ByteArray = "Race Cars Race Fast";
-    // or: let mut phrase = ByteArray::new(); phrase.append_string("Race Cars Race Fast");
+fn basic() {
+    let s: ByteArray = "Race Cars Travel Fast";
+    assert!(acronym::abbreviate(s) == "RCTF");
+}
 
-    let result = acronym::abbreviate(phrase);
-    assert(result == "RCRF", 'expected RCRF');
+#[test]
+fn hyphens() {
+    let s: ByteArray = "self-supervised learning";
+    assert!(acronym::abbreviate(s) == "SSL");
+}
+
+#[test]
+fn multiple_delims() {
+    let s: ByteArray = "  multiple   spaces --and-- hyphens ";
+    assert!(acronym::abbreviate(s) == "MSAH");
+}
+
+#[test]
+fn empty() {
+    let s: ByteArray = "";
+    assert!(acronym::abbreviate(s) == "");
 }
